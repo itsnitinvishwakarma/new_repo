@@ -1,0 +1,89 @@
+
+<body bgcolor="brown">
+<h1 style="color:wheat;text-align:center">Here is all about Products ..You want to know</h1>
+
+<table align="center" border="1" >
+    <tr bgcolor="green">
+        <th><h2 style="color:white">Product Registration</h2></th>
+        <th><h2 style="color:white">Product Details</h2></th>
+    </tr>
+
+    <tr>
+        <th bgcolor="skyblue">
+            <form action="{% url 'save_product'%}" method="post" enctype="multipart/form-data">
+             {% csrf_token %}
+                <table>
+                    <tr>
+                        <th><input style="background-color:cyan" type="number" placeholder="No" name="pno" value="{{obj.no}}" required></th>
+                    </tr>
+
+                     <tr>
+                        <th><input style="background-color:cyan" type="text" placeholder="Name" name="pname" value="{{obj.name}}" required></th>
+                    </tr>
+
+                     <tr>
+                        <th><input style="background-color:cyan" type="number" placeholder="quantity" name="pqty" value="{{obj.quantity}}"  required></th>
+                    </tr>
+
+                     <tr>
+                        <th><input style="background-color:cyan" type="number" placeholder="price" name="pprice" value="{{obj.price}}"  required></th>
+                    </tr>
+
+                     <tr>
+                        <th>Image:<input  type="file" name="pimage" required></th>
+                    </tr>
+
+                    <tr>
+                        <th><input style="background-color:cyan;color:green;font-size:20px"type="submit" value="Save" name="btn"></th>
+                    </tr>
+
+
+                </table>
+            </form>
+        </th>
+
+        <th bgcolor="lightgreen">
+            {% if data %}
+            <table  >
+                <tr>
+                    <th width="100"><h2>No</h2></th>
+                    <th width="50"><h2>Name</h2></th>
+                    <th width="100"><h2>Quantity</h2></th>
+                    <th width="100"><h2>Price</h2></th>
+                    <th width="100"><h2>Image</h2></th>
+                    <th width="100"><h2>Update</h2></th>
+                    <th width="100"><h2>Delete</h2></th>
+                </tr>
+
+                    {% for x in data %}
+                    <tr>
+                        <th>{{x.no}}</th>
+                        <th>{{x.name}}</th>
+                        <th>{{x.quantity}}</th>
+                        <th>{{x.price}}</th>
+                        <th><a href="{{x.image.url }}"><image width="50" height="50" src="{{ x.image.url }}" alt="missing"></image></a></th>
+                        <th><a style="color:brown" href="{% url 'update_product' %}?id={{x.no}}">Update</a></th>
+                        <th><a style="color:red" href="{% url 'delete_product' %}?id={{x.no}}">Delete</a></th>
+                    </tr>
+                    {% endfor %}
+
+                    <tr>
+                        {% if data.has_previous %}
+                            <th colspan="3" ><a href="{% url 'main'%}?page_no={{ data.previous_page_number }}">Previous</a></th>
+                        {% endif %}
+
+                        {% if data.has_next %}
+                        <th colspan="4" ><a href="{% url 'main' %}?page_no={{ data.next_page_number }}">Next</a></th>
+                        {% endif %}
+                    </tr>
+                </table>
+
+            {% else %}
+                <h2 style="text-align:center;color:red">No product available..</h2>
+                <p style="text-align:center;color:darkblue">please add some products..</p>
+            {% endif %}
+
+        </th>
+    </tr>
+</table>
+</body>
