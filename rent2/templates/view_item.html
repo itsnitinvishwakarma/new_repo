@@ -1,0 +1,41 @@
+{% extends 'common.html' %}
+{% load static %}
+
+{% block common %}
+<html>
+<head>
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+    <br><br><br>
+{% if request.session.login_status %}
+ {% if item_obj %}
+<h1 style="color:Green">Your items are:</h1>
+     <br><br>
+<table align="center"  style="font-size: 20px">
+    <tr >
+        <th width="300px"><span style="color:aqua">Name</span></th>
+        <th width="130px"><span style="color:aqua">Rent<sub>/day</sub></span></th>
+        <th><span style="color: aqua">Image</span></th>
+    </tr>
+
+    {% for x in item_obj %}
+        <tr><td><br></td></tr>
+    <tr style="color: blue">
+        <td style="color: orange">{{ x.item_name }}</td>
+        <td style="color:orange;">{{ x.item_price }}</td>
+        <td><a href="{{ x.item_image.url }}"><img width="100" height="100" src="{{ x.item_image.url }}"></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+   <h1 style="text-align: center;color: aqua">No items...</h1>
+{% endif %}
+    {% else %}
+        <h1 style="text-align: center;color: aqua">You are loggged out...</h1>
+{% endif %}
+</body>
+</html>
+{% endblock %}

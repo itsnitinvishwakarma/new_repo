@@ -1,0 +1,104 @@
+{% extends 'common.html' %}
+{%load static %}
+{% block common %}
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{%static 'home.css'%}">
+</head>
+
+<body>
+<h1 class="title2" style="padding-top: 8px">Dashing Sarees</h1>
+    <div class="container">
+      <div class="row">
+          <table>
+                 <tr>
+                    {% for x in saree_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?id={{ x.id }}&ctgry=tshirt"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in saree_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h3 style="color:lightgreen;width:200px">{{ x.brandname }} <span style="color:aqua;font-size:20px">Rs {{ x.price }}/day</span></h3></td>
+                    {% endfor %}
+                </tr>
+          </table>
+      </div>
+    </div>
+{#         <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{##}
+{#          <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{#        <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{##}
+{#            <br><br><br>#}
+{##}
+{#        <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{#        <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{#        <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{#        <div class="col-lg-3 col-md-4 col-sm-6">#}
+{#          <div  class="thumbnail" style="background-color: wheat">#}
+{#            <img   width="300px" height="150px" src="{% static 'clothes/saree3.jpg' %}" alt="image missing">#}
+{#          </div>#}
+{#              <h3>Type {{obj1.type}}</h3>#}
+{#              <h3>Brand {{obj1.brandname}}</h3>#}
+{#              <h3>price @{{obj1.price}}</h3>#}
+{#        </div>#}
+{##}
+{##}
+{##}
+{##}
+{#      </div>#}
+{#    </div>#}
+
+    </body>
+</html>
+
+{% endblock %}

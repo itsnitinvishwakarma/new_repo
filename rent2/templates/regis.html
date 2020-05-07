@@ -1,0 +1,41 @@
+{% extends 'common.html'%}
+{% load static%}
+{% block common %}
+<head>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+</head>
+<body>
+<h1 class="title2" style="padding-top: 8px;margin-left: 500px">Register here</h1>
+<h2 style="color: red;text-align: center"> {{ msg }}</h2>
+<br>
+<form method="post" action="{% url 'register' %}?from_dform={{ from_dform }}&item_price={{ item_price }}&img_path={{ img_path }}">
+    {%csrf_token%}
+    <table align="center" >
+        <tr>
+            <td style="font-weight: bold" class="form_label">{{rform.email.label}}</td>
+            <td  class="form_field">{{rform.email}}<td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold" class="form_label">{{rform.username.label}}</td>
+         <td  class="form_field">{{rform.username}}</td>
+        </tr>
+
+        <tr>
+            <td  style="font-weight: bold" class="form_label">{{rform.password.label}}</td>
+         <td  class="form_field">{{rform.password}}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="padding-left: 150px"><br><br>
+                <button  style="border-radius: 5px; color:lightgrey;background-color: green;font-size: 30px;" type="submit">Register</button>
+            </td>
+        </tr>
+
+    </table>
+    </form>
+
+<h2 style="color: red;text-align: center"> {{ error }}</h2>
+</body>
+
+{% endblock%}

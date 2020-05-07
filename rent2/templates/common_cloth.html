@@ -1,0 +1,115 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+<head>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+
+{% if shirt_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Shirts</h1>
+<br><br><br><br><br>
+    {% for x in shirt_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div>
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+
+{% if saree_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Sarees</h1>
+<br><br><br><br><br>
+    {% for x in saree_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div >
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+
+
+{% if tshirt_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Shirts</h1>
+<br><br><br><br><br>
+    {% for x in tshirt_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div>
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+
+{% if jeans_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Sarees</h1>
+<br><br><br><br><br>
+    {% for x in jeans_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div >
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+
+
+
+{% if salwar_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Shirts</h1>
+<br><br><br><br><br>
+    {% for x in salwar_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div>
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+
+{% if blazer_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Sarees</h1>
+<br><br><br><br><br>
+    {% for x in blazer_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div >
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+
+
+{% if pant_list %}
+<h1 class="title2" style="padding-top: 8px;margin-left: 400px">Shirts</h1>
+<br><br><br><br><br>
+    {% for x in pant_list %}
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div>
+              <a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="height: 250px;width: 200px;border-radius: 10px" src="{{ x.image.url }}" alt="image missing"></a>
+             <h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2><br><br><br>
+           </div>
+          </div>
+{% endfor %}
+{% endif %}
+
+      </div>
+    </div>
+</body>
+{% endblock %}

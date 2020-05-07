@@ -1,0 +1,62 @@
+{% extends 'common.html'%}
+{% load static%}
+{% block common %}
+<head>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+</head>
+
+<body>
+<h1 class="title2" style="padding-top: 8px">Provide details</h1>
+
+<form method="post" action="{% url 'thanks' %}?uname={{ uname }}&item_price={{ item_price }}&img_path={{ img_path }}" enctype="multipart/form-data">
+    {%csrf_token%}
+<table align="center">
+
+    <tr>
+        <th class="form_label">username:</th>
+        <td class="form_field">{{ lform.username }}</td>
+    </tr>
+
+    <tr>
+        <th class="form_label">password:</th>
+        <td class="form_field">{{ lform.password }}</td>
+    </tr>
+
+
+    <tr>
+        <th class="form_label">{{ dform.cus_contact.label }}:</th>
+        <td class="form_field">{{ dform.cus_contact }}</td>
+        <td class="form_field">{{ dform.cus_contact.errors }}</td>
+
+    </tr>
+
+    <tr>
+        <th class="form_label">{{ dform.cus_name.label }}:</th>
+        <td class="form_field">{{ dform.cus_name }}</td>
+    </tr>
+
+    <tr>
+        <th class="form_label">{{ dform.cus_adhar.label }}:</th>
+        <td class="form_field">{{ dform.cus_adhar }}</td>
+        <td class="form_field">{{ dform.cus_adhar.errors }}</td>
+    </tr>
+
+    <tr>
+        <th class="form_label">{{ dform.d_address.label }}:</th>
+        <td class="form_field">{{ dform.d_address }}</td>
+    </tr>
+
+
+    <tr>
+        <td align="center" colspan="2"><br>
+            <button  style=" border-radius: 10px; color:lightgrey;background-color: green;font-size: 20px;" type="submit">SUBMIT</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+{% if error %}
+    <h2 style="text-align: center;color:red">{{ error }}</h2>
+{% endif %}
+</body>
+{% endblock%}

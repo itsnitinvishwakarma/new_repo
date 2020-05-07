@@ -1,0 +1,33 @@
+{% extends 'common.html'%}
+{% load static%}
+{% block common %}
+<head>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+</head>
+<body>
+<h1 class="title2" style="padding-top: 8px">Login here</h1>
+<br>
+<form method="post" action="{% url 'check_login' %}">
+                {%csrf_token%}
+    <table align="center" >
+        <tr>
+            <th><h2 style="color:aqua;font-weight: bold">Username:</h2></th>
+            <th><h3 style="color: black"><input type="text" name="uname" required></h3></th>
+        </tr>
+
+        <tr>
+            <th><h2 style="color:aqua;font-weight: bold">Password:</h2></th>
+            <th><h3 style="color:black"><input type="text" name="pwd" required></h3></th>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><br>
+                <button  style=" border-radius:10px;color:lightgrey;background-color: green;font-size: 30px;" type="submit">Login</button>
+            </td>
+        </tr>
+
+    </table>
+    </form>
+<h1 style="text-align: center;color: red;">{{ msg }}</h1>
+</body>
+{% endblock %}

@@ -1,0 +1,62 @@
+.form_label
+{
+    /*padding-left: px;*/
+    color: aqua;
+    font-size: 25px;
+}
+
+.form_field
+{
+    color: black;
+    font-size: 25px;
+}
+
+
+.title
+{
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 450px;
+    width: 500px;
+    height: 150px;
+    background: lightpink;
+    border-radius: 50px;
+    color: brown;
+
+}
+
+.title2
+{
+    margin-top: 60px;
+    margin-left: 500px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 400px;
+    height: 60px;
+    background: lightpink;
+    border-radius: 50px;
+    color: brown;
+
+}
+h1 {
+    text-align:center;
+    color: lightgreen;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px yellow;
+}
+
+body
+{
+    background-color: darkblue;
+}
+
+.thumbnail
+{
+    width:200px;
+    height:300px;
+}
+
+.image
+{
+    text-align:center;
+}

@@ -1,0 +1,122 @@
+{% extends 'common.html'%}
+{% load static %}
+
+{% block common %}
+<head>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+<div class="title">
+<h1 style="text-shadow: 2px 2px 2px yellow;padding-top: 30px;color: brown;font-size: 40px">Welcome to Rent Bazaar</h1>
+<h3 style="font-style: oblique;text-decoration:underline;font-weight:bold  ">Everything is in your hand..</h3>
+</div>
+    <br><br><br>
+<div class="container">
+      <div class="row">
+          <table>
+              <tr><td><h1 style="padding-top: 50px">Latest shirts-</h1></td></tr>
+
+                 <tr>
+                    {% for x in shirt_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in shirt_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+                  <tr><td><h1 style="padding-top: 150px">Latest tshirts-</h1></td></tr>
+
+                <tr>
+                    {% for x in tshirt_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in tshirt_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+                <tr><td><h1 style="padding-top: 150px">Latest Jeans-</h1></td></tr>
+
+                 <tr>
+                    {% for x in jeans_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in jeans_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+                  <tr><td><h1 style="padding-top: 150px">Blazers-</h1></td></tr>
+
+                <tr>
+                    {% for x in blazer_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in blazer_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+                  <tr><td><h1 style="padding-top: 150px">Trousers-</h1></td></tr>
+
+                <tr>
+                    {% for x in pant_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in pant_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+
+                  <tr><td><h1 style="padding-top: 150px">Latest Sarees-</h1></td></tr>
+
+                <tr>
+                    {% for x in saree_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in saree_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+                  <tr><td style="width: 500px;"><h1 style="padding-top: 150px">Latest Salwars-</h1></td></tr>
+
+                <tr>
+                    {% for x in salwar_list %}
+                        <td style="padding: 50px 50px 0px 50px;"><a href="{% url 'detail' %}?uname={{ uname }}&id={{ x.id }}&type={{ x.type }}"><img style="border-radius:5px" src="{{ x.image.url }}" width="200" height="250"></a></td>
+                    {% endfor %}
+                </tr>
+
+                <tr>
+                    {% for x in salwar_list %}
+                    <td style="padding: 0px 50px 0px 50px"><h2 style="color:lightgreen">{{ x.brandname }} <span style="color:aqua;font-size:20px">{{ x.price }}/day</span></h2></td>
+                    {% endfor %}
+                </tr>
+
+          </table>
+      </div>
+    </div>
+
+</body>
+{% endblock %}

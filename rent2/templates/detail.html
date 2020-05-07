@@ -1,0 +1,23 @@
+
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+<head>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+<br><br><br><br><br>
+<div class="image">
+    <img src="{{ obj.image.url }}" width="300" height="400">
+</div>
+
+<h1 style="text-align: center;color: lightgreen">{{ obj.type }}&nbsp
+{{ obj.brandname}}&nbsp
+<span style="color:aqua;font-size: 30px">{{ obj.price }}/day</span></h1>
+
+<h3 style="text-align: center;color: orange">Click here to take
+<a href="{% url 'delivery_info' %}?uname={{ uname }}&item_price={{ obj.price }}&img_path={{ obj.image.url }}"><button style="font-size: 30px;background-color: yellow;color:green;border-radius: 10px" type="submit">On Rent</button></a>
+</h3>
+</body>
+{% endblock %}
