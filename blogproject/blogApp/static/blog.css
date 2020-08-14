@@ -1,0 +1,45 @@
+.content {
+    float: left;
+    width: 60%;
+    /*margin-left: 10px;*/
+    /*background: blue;*/
+}
+
+.sidebar
+{
+    float: right;
+    /*width: 38%;*/
+    width:30%;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    height: 60%;
+    background: green;
+}
+
+.postbody
+{
+    font-size: 17px;
+    color: black;
+}
+
+.date
+{
+    font-size: 15px;
+    color:orangered;
+}
+h2
+{
+    color:crimson;
+}
+
+h1
+{
+    font-size: 60px;
+    color:green;
+    border-bottom:2px solid green;
+}
+body
+{
+    background-color: lightgreen;
+}

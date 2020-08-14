@@ -1,0 +1,11 @@
+<html>
+<head>
+</head>
+<body>
+<ul style="list-style: square;font-size: 22px;color: black">
+    {% for post in latest_posts %}
+        <li><u><a style="color: darkblue;font-size:20px" href="{{ post.get_absolute_url }}">{{ post.title }}</a></u></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

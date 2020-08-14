@@ -1,0 +1,24 @@
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block bodycontent %}
+    <html>
+        <head></head>
+        <body>
+        <div class="container">
+            <h2 style="margin-bottom: 50px">Share post "{{ post.title }}" by mail</h2>
+
+            <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button class="btn btn-primary" type="submit" >SEND</button>
+            </form>
+
+            {% if sent %}
+            <h2 align="center">shared successfully.."{{ post.title }}"</h2>
+            {% endif %}
+        </div>
+        </body>
+        </html>
+{% endblock %}

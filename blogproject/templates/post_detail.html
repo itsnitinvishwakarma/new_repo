@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block bodycontent %}
+<html>
+    <head>
+        <title>{% block title %}Detail page{% endblock%}</title>
+    <link rel="stylesheet" href="{% static 'blog.css' %}">
+    </head>
+
+    <body>
+    <div class="container">
+        <h1 style="width:60%;">Nitin's blog </h1>
+            <h2>{{ post.title }}</h2>
+            <p class="date">published on {{ post.publish }} by {{ post.author|title }}</p>
+            <p class="postbody">{{ post.body}}</p>
+        <a class="btn btn-primary" href="/share/{{ post.id }}" >SHARE</a>
+
+    {% with comments.count as comments_count %}
+        <h2 style="color: darkcyan">{{ comments_count }} comment{{ comments_count|pluralize }}
+    {% endwith %}
+
+    {% if comments %}
+        {% for comment in comments %}
+            <h3 style="color: cadetblue">comment {{ forloop.counter }} by {{ comment.name }} on {{ comment.created }}</h3>
+            <h4 style="font-weight: bold;color: firebrick">{{ comment.body|linebreaks}}</h4>
+        {% endfor %}
+    {% endif %}
+
+    {% if csubmit %}
+        <p style="color: cadetblue">your comment saved successfully</p>
+
+    {% else %}
+        <div style="color: gray;font-size: 20px;margin-top: 20px">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success" type="submit" style="background: green">Comment</button>
+        </form>
+        </div>
+    {% endif %}
+    </div>
+</body>
+</html>
+{% endblock %}
