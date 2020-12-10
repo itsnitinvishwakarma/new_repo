@@ -46,17 +46,10 @@ def register(request):
         else:
             return render(request,'regis.html',{'error':'This username already taken','rform': rform})
 
-        # try:
-        #     Login.objects.get(username=uname)
-        #     return render(request,'regis.html', {'lform': lform,'error':'This username already taken'})
-        # except Login.DoesNotExist:
-        #     Login(username=uname,password=pwd,email=mail).save()
-        #     if from_dform:
-        #         return render(request,"delivery.html",{'dform':DeliveryForm(),'lform':LoginForm(request.POST),
-        #                                                'item_price':price,'img_path':image_path})
-        #     messages.success(request,'user registered!')
-        #     return redirect('login')
+    
     return render(request,"regis.html",{'rform':rform})
+
+
 
 
 def login(request):
